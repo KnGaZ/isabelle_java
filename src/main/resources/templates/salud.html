@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <title>Salud</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+  <h1 class="section-title">Estado del sistema</h1>
+  <p class="section-sub">Comprobacion de conectividad de la Fase 1</p>
+
+  <div class="card">
+    <div class="row between">
+      <span class="card-title mb0">Conexion MySQL</span>
+      <span th:if="${dbOk}"  class="badge-ok">OK</span>
+      <span th:unless="${dbOk}" class="badge-err">ERROR</span>
+    </div>
+    <p class="muted mono" style="margin-top:10px; word-break:break-word" th:text="${dbInfo}">detalle</p>
+  </div>
+
+  <a class="btn btn-block" th:href="@{/}">Volver al inicio</a>
+
+</div>
+</body>
+</html>

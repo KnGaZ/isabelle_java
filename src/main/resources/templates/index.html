@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+  <title>Inicio</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+  <h1 class="section-title">Concentrado</h1>
+  <p class="section-sub">Fase 1 desplegada · esqueleto visual y conexion a datos</p>
+
+  <!-- Muestra que la paleta, tipografias y tarjetas ya estan clonadas -->
+  <div class="card">
+    <div class="row between">
+      <div>
+        <p class="card-title mb0">Efectivo en caja</p>
+        <p class="card-sub mb0">Solo tender EFECTIVO</p>
+      </div>
+      <span class="amount in">$0.00</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="card-title">Movimientos de hoy</p>
+    <p class="muted">Aun no hay movimientos. La operacion arranca ~15/sep con base limpia.</p>
+    <div class="row" style="gap:6px; flex-wrap:wrap; margin-top:8px">
+      <span class="chip chip-in">Ingreso</span>
+      <span class="chip chip-out">Egreso</span>
+      <span class="chip chip-amber">Pendiente</span>
+      <span class="chip chip-booking">Booking</span>
+      <span class="chip chip-directo">Directo</span>
+      <span class="chip chip-mhc">MHC</span>
+    </div>
+  </div>
+
+  <!-- Fila de forma de pago (patron que usara la pantalla de Captura, seccion 9) -->
+  <div class="card">
+    <p class="card-title">Forma de pago</p>
+    <div class="btn-row">
+      <button type="button" class="btn selected">Efectivo</button>
+      <button type="button" class="btn">Tarjeta</button>
+      <button type="button" class="btn">Transferencia</button>
+    </div>
+  </div>
+
+  <a class="btn btn-primary btn-block" th:href="@{/salud}">Verificar conexion a MySQL</a>
+
+</div>
+</body>
+</html>
